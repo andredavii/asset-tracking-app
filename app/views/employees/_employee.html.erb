@@ -1,7 +1,11 @@
 <div id="<%= dom_id employee %>">
-  <p>
-    <strong>Full name:</strong>
-    <%= employee.full_name %>
+  <% if employee.profile_picture.present? %>
+    <%= image_tag employee.profile_picture %>  
+  <%end%>
+
+  <p>  
+  <strong>Full name:</strong>
+  <%= employee.full_name %>
   </p>
 
 </div>
