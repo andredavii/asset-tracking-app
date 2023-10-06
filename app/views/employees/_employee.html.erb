@@ -1,6 +1,6 @@
 <div id="<%= dom_id employee %>">
   <% if employee.profile_picture.present? %>
-    <%= image_tag employee.profile_picture %>  
+    <%= image_tag(employee.profile_picture, :class => "img-thumbnail") %>  
   <%end%>
 
   <p>  
