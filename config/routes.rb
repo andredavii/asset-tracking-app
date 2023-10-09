@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :devices
+  resources :softwares
   resources :manufacturers
   resources :categories
   resources :employees
