@@ -1,11 +1,15 @@
 <div id="<%= dom_id employee %>">
   <% if employee.profile_picture.present? %>
-    <%= image_tag(employee.profile_picture, :class => "img-thumbnail") %>  
+    <%= image_tag(employee.profile_picture, :class => "img-thumbnail") %>
   <%end%>
+  <p>
+  <strong>First name:</strong>
+  <%= employee.first_name %>
+  </p>
 
-  <p>  
-  <strong>Full name:</strong>
-  <%= employee.full_name %>
+  <p>
+  <strong>Last name:</strong>
+  <%= employee.last_name %>
   </p>
 
 </div>

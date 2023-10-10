@@ -4,12 +4,12 @@
 
 <div id="employees">
   <% @employees.each do |employee| %>
-    <div class="card">
+    <div class = "card">
     <%= render employee %>
     <p>
       <%= link_to "Show this employee", employee %>
     </p>
-   </div>
+    </div>
   <% end %>
 </div>
 

@@ -14,7 +14,8 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employees_url
     click_on "New employee"
 
-    fill_in "Full name", with: @employee.full_name
+    fill_in "First name", with: @employee.first_name
+    fill_in "Last name", with: @employee.last_name
     click_on "Create Employee"
 
     assert_text "Employee was successfully created"
@@ -25,7 +26,8 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employee_url(@employee)
     click_on "Edit this employee", match: :first
 
-    fill_in "Full name", with: @employee.full_name
+    fill_in "First name", with: @employee.first_name
+    fill_in "Last name", with: @employee.last_name
     click_on "Update Employee"
 
     assert_text "Employee was successfully updated"

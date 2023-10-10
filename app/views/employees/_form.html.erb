@@ -1,9 +1,10 @@
+
 <%= simple_form_for employee do |form| %>
 
-    <%= form.input :full_name %>
+    <%= form.input :first_name %>
+    <%= form.input :last_name %>
     <%= form.input :profile_picture %>
 
-  <div>
     <%= form.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
