@@ -1,7 +1,11 @@
 
 <%= simple_form_for device do |form| %>
 
-    <%= form.input :name %>
+  <%= form.input :name %>
+
+  <%= form.association :manufacturer %>
+
+  <%= form.association :category %>
 
     <%= form.submit :class => "btn btn-primary" %>
 <% end %>
