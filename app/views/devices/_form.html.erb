@@ -7,5 +7,7 @@
 
   <%= form.association :category %>
 
+  <%= form.association :employee, label_method: :last_name%>
+
     <%= form.submit :class => "btn btn-primary" %>
 <% end %>
