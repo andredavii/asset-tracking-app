@@ -1,20 +1,27 @@
 <div id="<%= dom_id device %>">
   <p>
-    <strong>Name:</strong>
-    <%= device.name %>
+  <strong>Name:</strong>
+  <%= device.name %>
   </p>
   <p>
-    <strong>Manufacturer:</strong>
-    <%= device.manufacturer.name %>
+  <strong>Manufacturer:</strong>
+  <%= device.manufacturer.name %>
   </p>
 
   <p>
-    <strong>Category:</strong>
-    <%= device.category.name %>
+  <strong>Category:</strong>
+  <%= device.category.name %>
   </p>
 
   <p>
-    <strong>Assigned to:</strong>
-    <%= device.employee.last_name %>
+  <strong>Assigned to:</strong> 
+
+  <% if device.employee %>
+    <%= link_to device.employee.last_name, employee_path(device.employee)%>
+  <% end %>
+
   </p>
+
+
 </div>
+
