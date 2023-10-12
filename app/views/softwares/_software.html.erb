@@ -8,5 +8,14 @@
     <strong>License count:</strong>
     <%= software.license_count %>
   </p>
+  
+  <p>
+  <strong>Assigned Employees:</strong>
+  <ul>
+    <% software.employees.each do |employee| %>
+      <li><%= link_to employee.last_name, employee_path(employee) %></li>
+    <% end %>
+  </ul>
+  </p>
 
 </div>
