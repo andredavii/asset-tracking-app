@@ -3,7 +3,7 @@
 
     <%= form.input :name %>
     <%= form.input :license_count %>
-    <%= form.association :employees, :label_method => :last_name, as: :check_boxes %>
+    <%= form.association :employees, :label_method => :full_name, as: :check_boxes %>
     <%= form.submit :class => "btn btn-primary" %>
 
 <% end %>
