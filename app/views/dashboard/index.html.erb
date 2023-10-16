@@ -18,9 +18,31 @@
       <td><%= category.name %></td>
       <td><%= category.devices.count %></td>
       <td><%= category.employees.uniq.count %></td>
+      <td><%= Category.left_outer_joins(:devices).where(devices: {id: nil}).distinct.count %></td>
     </tr>
   <% end%>
   </tbody>
 </table>
+<br>
 
-          
+<h2>Software Compliance</h2>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>License Count</th>
+      <th>Employee Count</th>
+      <th>Compliant?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @softwares.each do |software| %>
+      
+    <tr>
+      <td><%= software.name %></td>
+      <td><%= software.license_count %></td>
+      <td><%= software.employees.count %></td>
+    </tr>
+  <% end%>
+  </tbody>
+</table>
