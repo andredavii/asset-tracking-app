@@ -12,11 +12,12 @@
     </tr>
   </thead>
   <tbody>
-    <% Category.all.each do |category| %>
+    <% @categories.each do |category| %>
       
     <tr>
       <td><%= category.name %></td>
       <td><%= category.devices.count %></td>
+      <td><%= category.employees.uniq.count %></td>
     </tr>
   <% end%>
   </tbody>
