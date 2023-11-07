@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_215700) do
     t.datetime "updated_at", null: false
     t.integer "manufacturer_id", null: false
     t.integer "category_id", null: false
-    t.integer "employee_id", null: false
+    t.integer "employee_id"
     t.index ["category_id"], name: "index_devices_on_category_id"
     t.index ["employee_id"], name: "index_devices_on_employee_id"
     t.index ["manufacturer_id"], name: "index_devices_on_manufacturer_id"
