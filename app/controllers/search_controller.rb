@@ -3,20 +3,8 @@ class SearchController < ApplicationController
     @query = params[:query]
     @category_id = params[:category_id]
     @manufacturer_id = params[:manufacturer_id]
-    @devices = Device.where("name like '#{@query}%'") 
-
-
-    if @category_id.present?
-      @devices = @devices.where(category_id: @category_id)
-    end
-
-
-
-
-
-    if @manufacturer_id.present?
-      @devices = @devices.where(manufacturer_id: @manufacturer_id)
-    end
+    @search = Search.new(@query, :category_id => @category_id, :manufacturer_id => @manufacturer_id)
+    @devices = @search.results
   end
 end
 
