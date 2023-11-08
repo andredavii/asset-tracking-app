@@ -5,21 +5,22 @@
     <%= form.label :query, "Search for:", :class => "form-label" %>
     <%= form.text_field :query, :value => @query, :class => "form-control" %>
   </div>
-
+  <br>
   <div>
     <%= form.label :category_id, "Category:", :class => "form-label" %>
-    <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, :selected => @category_id, :include_blank => true %>
+    <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, { :selected => @category_id, :include_blank => true }, { :class => "form-select" } %>
   </div>
-
+  <br>
   <div>
     <%= form.label :manufacturer_id, "Manufacturer:", :class => "form-label" %>
-<%= form.select :manufacturer_id, Manufacturer.all.map { |m| [m.name, m.id] }, :selected => @manufacturer_id, :include_blank => true %>
+    <%= form.select :manufacturer_id, Manufacturer.all.map { |m| [m.name, m.id] }, { :selected => @manufacturer_id, :include_blank => true }, { :class => "form-select" } %>
   </div>
-
+<br>
   <div>
     <%= form.submit "Search", :class => "btn btn-outline-primary" %>
   </div>
 <% end %>
+<br>
 
 <% if @query.present? %>
   <h2>Results</h2>
