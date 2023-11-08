@@ -28,7 +28,7 @@
   <% if @devices.present? %>
     <ul>
       <% @devices.each do |d| %>
-        <li><%= d.name %></li>
+        <li><%= link_to d.full_device_name, device_path(d) %></li>
       <% end %>
     </ul>
   <% end %>
