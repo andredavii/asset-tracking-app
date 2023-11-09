@@ -15,6 +15,7 @@ class Search
     if @manufacturer_id.present?
       devices = devices.where(manufacturer_id: @manufacturer_id)
     end
+    devices
   end
 
 end

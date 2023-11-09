@@ -67,7 +67,6 @@ Employee.create(employee_hashes)
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.first,
     :category => Category.first,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -77,7 +76,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.second,
     :category => Category.first,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -86,7 +84,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.third,
     :category => Category.first,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -95,7 +92,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.first,
     :category => Category.second,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -105,7 +101,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.second,
     :category => Category.second,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -114,7 +109,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.third,
     :category => Category.second,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -123,7 +117,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.first,
     :category => Category.third,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -133,7 +126,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.second,
     :category => Category.third,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -142,7 +134,6 @@ end
     :name => "Device #{index + rand(1..100)}",
     :manufacturer => Manufacturer.third,
     :category => Category.third,
-    :employee => Employee.all[index % Employee.count]
   )
 end
 
@@ -159,4 +150,11 @@ end
   end
 end
 
+#Assign 3 unassigned devices to each employee
+3.times do
+  Employee.all.each do |employee|
+    device = Device.where(:employee_id => nil).sample
+    device.update(:employee_id => employee.id)
+  end
+end
 
