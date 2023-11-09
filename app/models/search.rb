@@ -7,7 +7,7 @@ class Search
   end
 
   def results
-    devices = Device.where("title like '%#{@query}%'")
+    devices = Device.where("name like '%#{@query}%'")
     if @category_id.present?
       devices = devices.where(category_id: @category_id)
     end
